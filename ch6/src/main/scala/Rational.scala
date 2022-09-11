@@ -3,6 +3,8 @@ class Rational(n: Int, d: Int) {
 
     val numerator: Int = n
     val denominator: Int = d
+
+    def this(n: Int) = this(n, 1)
     
     override def toString = numerator + "/" + denominator
 
