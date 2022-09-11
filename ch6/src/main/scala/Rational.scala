@@ -15,8 +15,7 @@ class Rational(n: Int, d: Int) {
             denominator * that.denominator
         )
     
-    def +(i: Int): Rational = 
-        new Rational(numerator + (i * denominator), denominator)
+    def +(i: Int): Rational = this + new Rational(i, 1)
     
     def -(that: Rational): Rational = 
         new Rational(
@@ -24,18 +23,17 @@ class Rational(n: Int, d: Int) {
             denominator * that.denominator
         )
     
-    def -(i: Int): Rational = 
-        new Rational(numerator - (i * denominator), denominator)
+    def -(i: Int): Rational = this - new Rational(i, 1)
 
     def *(that: Rational): Rational = 
         new Rational(numerator * that.numerator, denominator * that.denominator)
 
-    def *(i: Int): Rational = new Rational(numerator * i, denominator)
+    def *(i: Int): Rational = this * new Rational(i, 1)
 
     def /(that: Rational): Rational = 
         new Rational(numerator * that.denominator, denominator * that.numerator)
 
-    def /(i: Int): Rational = new Rational(numerator, denominator * i)
+    def /(i: Int): Rational = this / new Rational(i, 1)
 
     def lessThan(that: Rational): Boolean = 
         this.numerator * that.denominator < that.numerator * this.denominator
