@@ -15,4 +15,6 @@ class Rational(n: Int, d: Int) {
 
     def lessThan(that: Rational): Boolean = 
         this.numerator * that.denominator < that.numerator * this.denominator
+
+    def max(that: Rational) = if (lessThan(that)) that else this
 }
