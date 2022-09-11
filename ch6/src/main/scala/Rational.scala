@@ -9,12 +9,14 @@ class Rational(n: Int, d: Int) {
     
     override def toString = numerator + "/" + denominator
 
-    def add(that: Rational): Rational = {
+    def +(that: Rational): Rational =
         new Rational(
             numerator * that.denominator + that.numerator * denominator,
             denominator * that.denominator
         )
-    }
+
+    def *(that: Rational): Rational = 
+        new Rational(numerator * that.numerator, denominator * that.denominator)
 
     def lessThan(that: Rational): Boolean = 
         this.numerator * that.denominator < that.numerator * this.denominator
