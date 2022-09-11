@@ -1,3 +1,4 @@
 class Rational(n: Int, d: Int) {
-    println("Created " + n + "/" + d)
+    require(d != 0, "d cannot be 0")
+    override def toString = n + "/" + d
 }
