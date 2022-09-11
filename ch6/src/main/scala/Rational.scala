@@ -12,4 +12,7 @@ class Rational(n: Int, d: Int) {
             denominator * that.denominator
         )
     }
+
+    def lessThan(that: Rational): Boolean = 
+        this.numerator * that.denominator < that.numerator * this.denominator
 }
